@@ -17,7 +17,7 @@ Alguns isolamentos possíveis
 - Permissões e Políticas  
 - Capacidades do kernel  
 
-![arquitetura vm vs docker](./img/docker.png)
+![arquitetura vm vs docker](./img/doker.png)
 
 ## Definição oficial Containers
 
