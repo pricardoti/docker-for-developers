@@ -21,7 +21,9 @@ Alguns isolamentos possíveis:
 
 ![arquitetura vm vs docker](./img/doker.png)
 
-Podemos ver que o sistema do Docker é dividido basicamente em três camadas:
+## O Docker é dividido basicamente em três camadas:
+
+![arquitetura vm vs docker](./img/doker-server.png)
 
 **Client:** Permite aos usuários interagir com o Docker e acessar os containers via linha de comando ou API Remota.
 
@@ -30,10 +32,9 @@ Podemos ver que o sistema do Docker é dividido basicamente em três camadas:
 **Registry:** São serviços que fornecem locais de onde irá armazenar e baixar as imagens. Em outras palavras, o Registry, contém os repositórios Docker que hospedam as imagens, como Docker Hub.
 
 O Docker possui uma **arquitetura de client-server (cliente – servidor)**, onde os containers são armazenados em um servidor chamado de Docker Host. O servidor por sua vez, é responsável por todas as ações relacionadas à containers.
+O **Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma máquina virtual) e tem a capacidade de gerenciar os containers e pode servir para cada cliente um ou mais containers.
 
-**O Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma máquina virtual) e tem a capacidade de gerenciar os containers e pode servir para cada cliente um ou mais containers.
 
-![arquitetura vm vs docker](./img/doker-server.png)
 
 #### Quais os beneficios e vantagens de utilizar o Docker ?
 
