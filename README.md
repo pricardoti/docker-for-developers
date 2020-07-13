@@ -1,7 +1,8 @@
 
 # Docker para Desenvolvedores  
 Criando ambientes profissionais completos com Docker, que é a principal tecnologia de containers atualmente no mercado.  
-  
+
+![arquitetura vm vs docker](./img/doker-logo.png)  
 
 ## Docker  
 É uma ferramenta que se apoia em recursos existentes no kernel, inicialmente Linux, para isolar  
@@ -19,6 +20,20 @@ Alguns isolamentos possíveis:
 - Capacidades do kernel  
 
 ![arquitetura vm vs docker](./img/doker.png)
+
+Podemos ver que o sistema do Docker é dividido basicamente em três camadas:
+
+**Client:** Permite aos usuários interagir com o Docker e acessar os containers via linha de comando ou API Remota.
+
+**Host:** Fornece um ambiente completo para executar aplicativos, sendo composto pelo Daemon, imagens, containers, rede e volumes. O Daemon é responsável por todas as ações relacionadas aos containers e recebe comandos por meio do Client.
+
+**Registry:** São serviços que fornecem locais de onde irá armazenar e baixar as imagens. Em outras palavras, o Registry, contém os repositórios Docker que hospedam as imagens, como Docker Hub.
+
+O Docker possui uma **arquitetura de client-server (cliente – servidor)**, onde os containers são armazenados em um servidor chamado de Docker Host. O servidor por sua vez, é responsável por todas as ações relacionadas à containers.
+
+**O Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma máquina virtual) e tem a capacidade de gerenciar os containers e pode servir para cada cliente um ou mais containers.
+
+![arquitetura vm vs docker](./img/doker-server.png)
 
 #### Quais os beneficios e vantagens de utilizar o Docker ?
 
