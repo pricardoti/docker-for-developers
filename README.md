@@ -19,23 +19,6 @@ Alguns isolamentos possíveis:
 - Permissões e Políticas  
 - Capacidades do kernel  
 
-![arquitetura vm vs docker](./img/doker.png)
-
-## O Docker é dividido basicamente em três camadas:
-
-![arquitetura vm vs docker](./img/doker-server.png)
-
-**Client:** Permite aos usuários interagir com o Docker e acessar os containers via linha de comando ou API Remota.
-
-**Host:** Fornece um ambiente completo para executar aplicativos, sendo composto pelo Daemon, imagens, containers, rede e volumes. O Daemon é responsável por todas as ações relacionadas aos containers e recebe comandos por meio do Client.
-
-**Registry:** São serviços que fornecem locais de onde irá armazenar e baixar as imagens. Em outras palavras, o Registry, contém os repositórios Docker que hospedam as imagens, como Docker Hub.
-
-O Docker possui uma **arquitetura de client-server (cliente – servidor)**, onde os containers são armazenados em um servidor chamado de Docker Host. O servidor por sua vez, é responsável por todas as ações relacionadas à containers.
-O **Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma máquina virtual) e tem a capacidade de gerenciar os containers e pode servir para cada cliente um ou mais containers.
-
-
-
 #### Quais os beneficios e vantagens de utilizar o Docker ?
 
 -   O Docker possibilita o empacotamento de uma aplicação ou ambiente inteiro dentro de um container, e a partir desse momento o ambiente inteiro torna-se portável para qualquer outro Host que contenha o Docker instalado.
@@ -43,6 +26,8 @@ O **Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma
 -   Outra facilidade do Docker é poder criar suas imagens (containers prontos para deploy) a partir de arquivos de definição chamados Dockerfiles.
 
 ## Containers (Definição oficial)
+
+![arquitetura vm vs docker](./img/doker.png)
 
 Docker empacotam componentes de software em um sistema de arquivos completo, que contêm tudo necessário para a execução: código, runtime, ferramentas de sistema - qualquer coisa que possa ser instalada em um servidor. Isto garante que o software sempre irá executar da mesma forma, independente do seu ambiente.
 
@@ -64,6 +49,22 @@ linux, as imagens em si serão baseadas em linux.
 - Não é possível usar um kernel diferente do host, o Docker Engine estará executando sob
 uma determinada versão (ou emulação) do kernel linux, e não é possível executar uma versão
 diferente, pois as imagens não possuem kernel.
+
+## Arquitetura do Docker
+
+![arquitetura vm vs docker](./img/doker-server.png)
+
+O Docker é dividido basicamente em três camadas:
+
+- **Client:** Permite aos usuários interagir com o Docker e acessar os containers via linha de comando ou API Remota.
+
+- **Host:** Fornece um ambiente completo para executar aplicativos, sendo composto pelo Daemon, imagens, containers, rede e volumes. O Daemon é responsável por todas as ações relacionadas aos containers e recebe comandos por meio do Client.
+
+- **Registry:** São serviços que fornecem locais de onde irá armazenar e baixar as imagens. Em outras palavras, o Registry, contém os repositórios Docker que hospedam as imagens, como Docker Hub.
+
+O Docker possui uma **arquitetura de client-server (cliente – servidor)**, onde os containers são armazenados em um servidor chamado de Docker Host. O servidor por sua vez, é responsável por todas as ações relacionadas à containers.
+
+O **Docker host** pode ser local ou remoto (ou seja, uma máquina física ou uma máquina virtual) e tem a capacidade de gerenciar os containers e pode servir para cada cliente um ou mais containers.
 
 Este conteúdo é baseado no curo [Docker: Ferramenta essencial para Desenvolvedores](https://www.udemy.com/course/curso-docker/).    
 
