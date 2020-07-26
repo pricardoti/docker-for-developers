@@ -2,7 +2,7 @@
 # Docker para Desenvolvedores  
 Criando ambientes profissionais completos com Docker, que é a principal tecnologia de containers atualmente no mercado.  
 
-![arquitetura vm vs docker](./img/doker-logo.png)  
+![arquitetura vm vs docker](img/docker-logo.png)  
 
 ## Docker  
 É uma ferramenta que se apoia em recursos existentes no kernel, inicialmente Linux, para isolar  
@@ -27,7 +27,7 @@ Alguns isolamentos possíveis:
 
 ## Containers (Definição oficial)
 
-![arquitetura vm vs docker](./img/doker.png)
+![arquitetura vm vs docker](img/docker.png)
 
 Docker empacotam componentes de software em um sistema de arquivos completo, que contêm tudo necessário para a execução: código, runtime, ferramentas de sistema - qualquer coisa que possa ser instalada em um servidor. Isto garante que o software sempre irá executar da mesma forma, independente do seu ambiente.
 
@@ -52,7 +52,7 @@ diferente, pois as imagens não possuem kernel.
 
 ## Arquitetura do Docker
 
-![arquitetura vm vs docker](./img/doker-server.png)
+![arquitetura vm vs docker](./img/docker-server.png)
 
 O Docker é dividido basicamente em três camadas:
 
