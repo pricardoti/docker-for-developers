@@ -33,11 +33,13 @@ Observação: alguns comando terão um mesmo resultado, pois são alias, devido 
 - Verificado caracteristicas da imagem: ```docker image inspect {{nome da imagem}}:latest```
 
 Após a exeução devemos ter algo parecido com esta imagem:
+
 ![docker-image-ls](./img/commands/docker-image-inspect.png)
 
 - Adicionando uma nova imagem com uma tag: ```docker image tag {{nome da imagem}}:latest {{tag desejada}}```
 
 Após a exeução devemos ter algo parecido com esta imagem:
+
 ![docker-image-ls](./img/commands/docker-image-ls.png)
 
 - Apagando uma imagem: ```docker image rm {{id da imagem}}```
