@@ -1,2 +1,7 @@
+# Files
 .idea/
 *.iml
+package-lock.json
+
+# Folders
+/docker-compose/backend/node_modules
