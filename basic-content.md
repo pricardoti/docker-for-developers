@@ -10,17 +10,17 @@ Um outro ponto, é quando executamos o Docker, em um S.O diferente do Linux, ou 
 
 ### Containers
 
-1. Hello World ```docker container run hello-world```
+1. Hello World ```$ docker container run hello-world```
 2. Modo *Daemon* ou *Interativo*
 3. Run: Sempre cria novos conteiners, o comando ```docker run --rm debian bash --version``` remove apos execução.
 4. containers com nomes unicos (hash de 256 caracteres, mas podem ser criados identificadores mais legíveis para facilitar o reuso).
 
-- ```docker run --help``` -> ```--name``` 
+- ```$ docker run --help``` -> ```--name``` 
 
 5. reutilizar containers
 
-- ```docker ps -a``` ou ```docker container ls -a```
-- ```docker container start -ai {{name-container}}```
+- ```$ docker ps -a``` ou ```$ docker container ls -a```
+- ```$ docker container start -ai {{name-container}}```
 
 Observação: alguns comando terão um mesmo resultado, pois são alias, devido a mudanças de sintaxe após 1.13 do Docker.
 
@@ -28,18 +28,32 @@ Observação: alguns comando terão um mesmo resultado, pois são alias, devido 
 
 ### Images
 
-- Verificar as imagens disponiveis na sua maquina: ``` docker image ls```
-- Baixando uma nova imagem: ```docker image pull {{nome da imagem}}:latest```
-- Verificado caracteristicas da imagem: ```docker image inspect {{nome da imagem}}:latest```
+- Verificar as imagens disponiveis na sua maquina: ```$ docker image ls```
+- Baixando uma nova imagem: ```$ docker image pull {{nome da imagem}}:latest```
+- Verificado caracteristicas da imagem: ```$ docker image inspect {{nome da imagem}}:latest```
 
 Após a exeução devemos ter algo parecido com esta imagem:
 
 ![docker-image-ls](./img/commands/docker-image-inspect.png)
 
-- Adicionando uma nova imagem com uma tag: ```docker image tag {{nome da imagem}}:latest {{tag desejada}}```
+- Adicionando uma nova imagem com uma tag: ```$ docker image tag {{nome da imagem}}:latest {{tag desejada}}```
 
 Após a exeução devemos ter algo parecido com esta imagem:
 
 ![docker-image-ls](./img/commands/docker-image-ls.png)
 
-- Apagando uma imagem: ```docker image rm {{id da imagem}}```
+- Apagando uma imagem: ```$ docker image rm {{id da imagem}}```
+
+# Meu Primeio Build (Criando uma imagem)
+
+Para criar uma imagem é necessário executar o seguinte comando:
+
+```$ docker image build -t {{nome da imagem}} {{caminho folder que contém o descritor do docker file}}```
+
+Uma vez criada a imagem pode ser vista com o comando:
+
+```$ docker image ls```
+
+Links de Documentação: 
+1. [Documentação Docker Build](https://docs.docker.com/engine/reference/commandline/build/)
+2. [Documentação Docker Run](https://docs.docker.com/engine/reference/run/)

@@ -3,27 +3,30 @@ version: '3'
 
 # Especificando os serviços que serão orquestrados.
 services:
-  db:                       # Nome do service - neste caso, servico de banco de dados baseado no MongoDB.
-    image: mongo:3.4        # imagem que está sendo baseado o serviço
+  db: # Nome do service - neste caso, servico de banco de dados baseado no MongoDB.
+    image: mongo:latest       # imagem que está sendo baseado o serviço
     container_name: 'my_dbmongo_container'
     environment:
       - MONGO_INITDB_DATABASE=mydb
-    volumes:
-      - ./database:/data/db
-  backend:                  # Nome do service - baseado em node com um volume (pasta mapeada).
+
+  backend: # Nome do service - baseado em node com um volume (pasta mapeada).
     image: node:latest
     container_name: 'my_backend_container'
     volumes:
       - ./backend:/backend  # (folder no host)/(folder container)
     ports:
-      - 3000:3000           # portas mapeadas (porta do host)/(porta do container)
-
+      # portas mapeadas (porta do host)/(porta do container)
+      - 3000:3000
     # Comando que será executada após a inicialização.
-    command: bash -c "cd ./backend && npm i && chmod 777 -R ./node_modules && node app"
+    command: bash -c "cd ./backend && npm i && node app"
+    depends_on:
+      - db
+
   frontend:
     image: nginx:1.13       # imagem que está sendo baseado o serviço
     container_name: 'my_frontend_container'
-    volumes:                # (folder no host)/(folder container)
+    volumes: # (folder no host)/(folder container)
       - ./frontend:/usr/share/nginx/html/
     ports:
-      - 80:80               # portas mapeadas (porta do host)/(porta do container)
+      # portas mapeadas (porta do host)/(porta do container)
+      - 8080:80
