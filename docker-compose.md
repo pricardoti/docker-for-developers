@@ -18,3 +18,19 @@ aplicações de serviços independentes distribuíveis. Entre suas principais ca
 - **Inteligência no uso das API's**
 - Controle descentralizado de dados
 - Independência de linguagens
+
+Uso da instrução ``build`` no lugar do ``image`` para indicar a necessidade de executar um build,
+neste caso do arquivo ``Dockerfile``
+
+### Escalando o worker e especializando o log
+
+Executando o ``docker-compose`` em modo daemon (background):
+``$ docker-compose up -d``
+
+Escalando a solução (varios workes):
+``$ docker-compose scale worker=3`` 
+
+*Obs.: Quando utilizado com o commando ``scale`` com o ``container_name: worker-pj-final`` apresenta conflito no start da execução.*
+
+Exibindo o log:
+``$ docker-compose logs -f -t worker``
